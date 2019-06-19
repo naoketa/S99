@@ -7,5 +7,10 @@ class P02Spec extends FunSpec with DiagrammedAssertions{
     it("3つの要素のリストから、最後から二つ目の要素を返す") {
       assert(P02.penultimate(List(1,2,3)) === 2)
     }
+    it("空のリストでNoSuchElementExceptionを発生させる") {
+      intercept[NoSuchElementException] {
+        P02.penultimate(List())
+      }
+    }
   }
 }

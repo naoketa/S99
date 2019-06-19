@@ -13,6 +13,11 @@ class P01Spec extends FunSpec with DiagrammedAssertions {
     it("複数の文字列を持つリストで、最後の要素を返す") {
       assert(P01.last(List("1","2","3")) === "3")
     }
+    it("空のリストでNoSuchElementExceptionを発生させる") {
+      intercept[NoSuchElementException] {
+        P01.last(List())
+      }
+    }
   }
 
 }
